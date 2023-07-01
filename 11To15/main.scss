@@ -1,0 +1,103 @@
+// Assignment One
+@mixin arrow($direction) {
+    content: "";
+    position: absolute;
+    border: 20px solid transparent;
+    @if $direction == 'top' {
+        left: 50%;
+        transform: translateX(-50%);
+        top: -40px;
+        border-bottom-color: red;
+    } @else if $direction == 'right' {
+        top: 50%;
+        transform: translateY(-50%);
+        right: -40px;
+        border-left-color: red;
+    } @else if $direction == 'bottom' {
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -40px;
+        border-top-color: red;
+    } @else if $direction == 'left' {
+        top: 50%;
+        transform: translateY(-50%);
+        left: -40px;
+        border-right-color: red;
+    }
+}
+
+.element {
+    &:before {
+        @include arrow("right");
+    }
+}
+
+
+// Assignment two
+$grid_cols: 16;
+$start: 1;
+
+@while $start <= $grid_cols {
+    .col-#{$start} {
+        width: ($start / $grid_cols) * 100%;
+    }
+    $start: $start + 1;
+}
+
+
+
+// Assignment Three
+$names:
+    "books" 20px red 18,
+    "games" 30px green 18,
+    "dvds" 20px blue;
+
+@each $class, $size, $color, $font_size in $names {
+    .#{$class} {
+        padding: $size;
+        font-size: if($font_size, $font_size * 1px, 16px);
+        border-bottom: 2px solid $color;
+        color: #444;
+    }
+}
+
+
+
+// Assignment Four
+$init : 1;
+
+@while $init <= 5 {
+    .circle-#{$init * 100} {
+        width: ($init * 100px);
+        height: $init * 100px;
+        border-radius: ($init * 100px) / 2;
+    }
+    $init: $init + 1;
+}
+
+
+// Assignment Five
+@for $i from 1 through 5  {
+    .circle-#{$i * 100} {
+        width: ($i * 100px);
+        height: $i * 100px;
+        border-radius: ($i * 100px) / 2;
+    }
+}
+
+
+// Assignment Six
+// Write Mixin Code Here
+@mixin flex-center($size: 400px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: $size;
+}
+// Using
+.box-one {
+    @include flex-center(400px);
+}
+.box-two {
+    @include flex-center;
+}

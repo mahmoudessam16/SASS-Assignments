@@ -1,0 +1,26 @@
+/* Assignment One */
+.school {
+  padding: 20px;
+  direction: rtl;
+  margin-right: 20px;
+}
+.school .school-box {
+  padding: 10px;
+}
+.school:hover .school-box {
+  background-color: #eee;
+}
+
+/* Assignment Two */
+/* Theme Version: 1.0 */
+/* Website Theme Main Color Is: red */
+/* Website Theme Alternate Color Is: blue */
+/* Assignment Three */
+.class {
+  color: green;
+}
+
+/* Assignment Four */
+/* Assignment Five */
+/* Output */
+/* Nothing *//*# sourceMappingURL=main.css.map */

@@ -1,0 +1,14 @@
+// Assignment One
+@function get-total($items...) {
+  $total: 0;
+  @each $item in $items {
+    $total: $total + $item;
+  }
+  @return $total;
+}
+
+.box {
+  top: get-total(100, 50, 20) * 1px;
+  right: get-total(100, 50) * 1px;
+}
+
